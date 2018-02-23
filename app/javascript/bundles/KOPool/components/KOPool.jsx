@@ -8,6 +8,8 @@ import { UserProfile } from "./UserProfile";
 import { Sidebar } from "./Sidebar"
 import { WeekSummary } from "./WeekSummary"
 import { WeekTeamSummary } from "./WeekTeamSummary"
+import { UserWeekPicks } from "./UserWeekPicks";
+import { NewUserPick } from "./NewUserPick";
 
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
@@ -54,8 +56,10 @@ class KOPool extends React.Component {
                 <Container text>
                   <Route path="/" exact component={Home} />
                   <Route path="/profile" exact component={UserProfile} />
+                  <Route path="/week_picks" exact component={UserWeekPicks} />
                   <Route path="/week_summary" exact component={WeekSummary} />
                   <Route path="/week_summary/:team_id" component={WeekTeamSummary} />
+                  <Route path="/new_pick" component={NewUserPick} />
                 </Container>
               </Grid.Column>
             </Grid.Row>

@@ -14,6 +14,10 @@
     color: $white;
     background-color: $blue;
   }
+  .needs-pick {
+    color: $black;
+    background-color: $yellow;
+  }
 }
 
 .ui.container {
@@ -38,4 +42,12 @@
       }
     }
   }
+}
+
+.placeholder {
+  color: $grey;
+}
+
+.italics {
+  font-style: italic;
 }

@@ -27,85 +27,100 @@ class Home extends React.Component {
     } else {
       return (
         <div>
-          <Header as='h1'>Your picks this week</Header>
+          <Header as='h1'>Welcome to KO Pool 2018!</Header>
 
-          <Card fluid>
-            <Image src='' />
-            <Card.Content>
-              <Card.Header>
-                Vikings
-              </Card.Header>
-              <Card.Meta>
-                <span className='date'>
-                  Minnesota
-                </span>
-              </Card.Meta>
-              <Card.Description>
-                Sunday, October 14th, 12 PM - Mile-Hi Stadium in Denver, CO
-              </Card.Description>
-            </Card.Content>
-            <Card.Content extra>
-              <a>
-                <Icon name='user' />
-                35 picks this week
-              </a>
-            </Card.Content>
-            <Card.Content extra className="won">
-              Won
-            </Card.Content>
-          </Card>
+          {/*<Card fluid>*/}
+            {/*<Image src='' />*/}
+            {/*<Card.Content>*/}
+              {/*<Card.Header>*/}
+                {/*Minnesota Vikings*/}
+              {/*</Card.Header>*/}
+              {/*<Card.Meta>*/}
+                {/*<span className='date'>*/}
+                  {/*Start Collins Me a Winner*/}
+                {/*</span>*/}
+              {/*</Card.Meta>*/}
+              {/*<Card.Description>*/}
+                {/*Sunday, October 14th, 12 PM - Mile-Hi Stadium in Denver, CO*/}
+              {/*</Card.Description>*/}
+            {/*</Card.Content>*/}
+            {/*<Card.Content extra>*/}
+              {/*<a>*/}
+                {/*<Icon name='user' />*/}
+                {/*35 picks this week*/}
+              {/*</a>*/}
+            {/*</Card.Content>*/}
+            {/*<Card.Content extra className="won">*/}
+              {/*Won*/}
+            {/*</Card.Content>*/}
+          {/*</Card>*/}
 
-          <Card fluid>
-            <Image src='' />
-            <Card.Content>
-              <Card.Header>
-                Cowboys
-              </Card.Header>
-              <Card.Meta>
-                <span className='date'>
-                  Dallas
-                </span>
-              </Card.Meta>
-              <Card.Description>
-                Sunday, October 14th, 3 PM - Minnesota Stadium in Minneapolis, MN
-              </Card.Description>
-            </Card.Content>
-            <Card.Content extra>
-              <a>
-                <Icon name='user' />
-                12 picks this week
-              </a>
-            </Card.Content>
-            <Card.Content extra className="lost">
-              Knocked Out
-            </Card.Content>
-          </Card>
+          {/*<Card fluid>*/}
+            {/*<Image src='' />*/}
+            {/*<Card.Content>*/}
+              {/*<Card.Header>*/}
+                {/*Dallas Cowboys*/}
+              {/*</Card.Header>*/}
+              {/*<Card.Meta>*/}
+                {/*<span className='date'>*/}
+                  {/*My Cat Picked This Team*/}
+                {/*</span>*/}
+              {/*</Card.Meta>*/}
+              {/*<Card.Description>*/}
+                {/*Sunday, October 14th, 3 PM - Minnesota Stadium in Minneapolis, MN*/}
+              {/*</Card.Description>*/}
+            {/*</Card.Content>*/}
+            {/*<Card.Content extra>*/}
+              {/*<a>*/}
+                {/*<Icon name='user' />*/}
+                {/*12 picks this week*/}
+              {/*</a>*/}
+            {/*</Card.Content>*/}
+            {/*<Card.Content extra className="lost">*/}
+              {/*Knocked Out*/}
+            {/*</Card.Content>*/}
+          {/*</Card>*/}
 
-          <Card fluid>
-            <Image src='' />
-            <Card.Content>
-              <Card.Header>
-                Falcons
-              </Card.Header>
-              <Card.Meta>
-                <span className='date'>
-                  Atlanta
-                </span>
-              </Card.Meta>
-              <Card.Description>
-                Sunday, October 14th, 3 PM - Raiders Stadium in Oakland, CA
-              </Card.Description>
-            </Card.Content>
-            <Card.Content extra>
-              <a>
-                <Icon name='user' />
-                25 picks this week
-              </a>
-            </Card.Content>
-            <Card.Content extra className="pending">
-              In Play
-            </Card.Content>
-          </Card>
+          {/*<Card fluid>*/}
+            {/*<Image src='' />*/}
+            {/*<Card.Content>*/}
+              {/*<Card.Header>*/}
+                {/*Atlanta Falcons*/}
+              {/*</Card.Header>*/}
+              {/*<Card.Meta>*/}
+                {/*<span className='date'>*/}
+                  {/*Denver Represent*/}
+                {/*</span>*/}
+              {/*</Card.Meta>*/}
+              {/*<Card.Description>*/}
+                {/*Sunday, October 14th, 3 PM - Raiders Stadium in Oakland, CA*/}
+              {/*</Card.Description>*/}
+            {/*</Card.Content>*/}
+            {/*<Card.Content extra>*/}
+              {/*<a>*/}
+                {/*<Icon name='user' />*/}
+                {/*25 picks this week*/}
+              {/*</a>*/}
+            {/*</Card.Content>*/}
+            {/*<Card.Content extra className="pending">*/}
+              {/*In Play*/}
+            {/*</Card.Content>*/}
+          {/*</Card>*/}
+
+          {/*<Card fluid>*/}
+            {/*<Image src='' />*/}
+            {/*<Card.Content>*/}
+              {/*<Card.Header>*/}
+                {/*Snowboarding FTW*/}
+              {/*</Card.Header>*/}
+              {/*<Card.Description>*/}
+                {/*Click here to make a pick for this pool entry!*/}
+              {/*</Card.Description>*/}
+            {/*</Card.Content>*/}
+            {/*<Card.Content extra className="needs-pick">*/}
+              {/*Needs a Pick!*/}
+            {/*</Card.Content>*/}
+          {/*</Card>*/}
         </div>
       )
     }
