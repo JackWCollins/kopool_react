@@ -1,6 +1,7 @@
 import React from 'react'
-import { Card, Grid, Search, Button, Image, Divider, Container } from 'semantic-ui-react'
+import { List, Grid, Search, Button, Image, Divider, Container } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
+import { WeekMatchup } from "./WeekMatchup";
 
 export class NewUserPick extends React.Component {
   constructor(props) {
@@ -54,73 +55,17 @@ export class NewUserPick extends React.Component {
 
   render() {
     const matchups = this.state.matchups.map((matchup) => (
-      <Grid divided='vertically' key={matchup.id}>
-        <Grid.Row columns={3}>
-          <Grid.Column>
-            <Card>
-              <Card.Content>
-                <Image />
-                <Card.Header>
-                  {matchup.home_team.name}
-                </Card.Header>
-                <Card.Meta>
-                  Home team
-                </Card.Meta>
-              </Card.Content>
-              <Card.Content textAlign='center'>
-                <div>
-                  <Button basic color='green'>Pick {matchup.home_team.name}</Button>
-                </div>
-              </Card.Content>
-            </Card>
-          </Grid.Column>
-          <Grid.Column textAlign='center'>
-            AT
-            <Divider></Divider>
-            <div className='placeholder italics'>
-              {matchup.game_time}
-            </div>
-            <div className='placeholder italics'>
-              {matchup.stadium}
-            </div>
-          </Grid.Column>
-          <Grid.Column>
-            <Card>
-              <Card.Content>
-                <Image />
-                <Card.Header>
-                  {matchup.away_team.name}
-                </Card.Header>
-                <Card.Meta>
-                  Away team
-                </Card.Meta>
-              </Card.Content>
-              <Card.Content textAlign='center'>
-                <div>
-                  <Button basic color='green'>Pick {matchup.away_team.name}</Button>
-                </div>
-              </Card.Content>
-            </Card>
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-
+       <WeekMatchup matchup={matchup} key={matchup.id} />
     ));
 
     return (
       <div>
-        <Container>
-          <Search
-            // loading={isLoading}
-            // onResultSelect={this.handleResultSelect}
-            // onSearchChange={this.handleSearchChange}
-            // results={results}
-            // value={value}
-            {...this.props}
-          />
+        <Container fluid className='search-container'>
+          <Search/>
         </Container>
-
-        {matchups}
+        <Grid divided='vertically' className='week-matchups'>
+          {matchups}
+        </Grid>
       </div>
     )
   }

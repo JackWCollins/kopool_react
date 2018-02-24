@@ -45,9 +45,17 @@
 }
 
 .placeholder {
-  color: $grey;
+  color: $grey !important;
 }
 
 .italics {
   font-style: italic;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
 }
