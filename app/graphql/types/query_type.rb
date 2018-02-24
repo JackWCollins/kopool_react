@@ -18,4 +18,11 @@ Types::QueryType = GraphQL::ObjectType.define do
       NflTeam.all
     }
   end
+
+  field :webState, !Types::WebStateType do
+    description "Returns the active web state"
+    resolve ->(obj, args, context) {
+      WebState.first
+    }
+  end
 end

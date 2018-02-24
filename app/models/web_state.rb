@@ -1,7 +1,7 @@
 class WebState < ApplicationRecord
 
-  belongs_to :current_week, class_name: "Week", :foreign_key => "week_id"
-  belongs_to :current_season, class_name: "Season", :foreign_key => "season_id"
+  belongs_to :week
+  belongs_to :season
 
   validate :only_one_record?, :on => :create
   validate :season_matches_week, :on => :update
@@ -15,7 +15,7 @@ class WebState < ApplicationRecord
   end
 
   def season_matches_week
-    unless current_week.season_id == current_season.id
+    unless week.season_id == season.id
       self.errors[:base] << "Current week must be in the current season."
     end
   end

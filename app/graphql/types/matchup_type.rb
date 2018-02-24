@@ -3,7 +3,7 @@ Types::MatchupType = GraphQL::ObjectType.define do
   description 'A game between two NFL teams'
 
   field :id, !types.ID
-  field :game_time, !types.DateTime
+  field :game_time, !Types::DateTimeType
   field :locked, !types.Boolean
   field :completed, !types.Boolean
   field :tie, !types.Boolean

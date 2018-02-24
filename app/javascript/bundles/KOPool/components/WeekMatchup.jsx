@@ -29,7 +29,6 @@ export class WeekMatchup extends React.Component {
           <Button basic color='green' onClick={() => this.handleTeamPick(this.props.matchup.away_team.id)}>Pick {this.props.matchup.away_team.name}</Button>
         </Grid.Column>
       </Grid.Row>
-
     )
   }
 }

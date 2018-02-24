@@ -87,20 +87,22 @@ export class UserWeekPicks extends React.Component {
 
   render() {
     const unpicked = this.state.poolEntries.filter((pe) => typeof(pe.pick.id) === 'undefined').map((pe) => (
-      <Card fluid key={pe.id} href='/new_pick'>
-        <Image src='' />
-        <Card.Content>
-          <Card.Header>
-            {pe.name}
-          </Card.Header>
-          <Card.Description>
-            Click here to make a pick for this pool entry!
-          </Card.Description>
-        </Card.Content>
-        <Card.Content extra className="needs-pick">
-          Needs a Pick!
-        </Card.Content>
-      </Card>
+      <Link key={pe.id} to='/new_pick'>
+        <Card fluid >
+          <Image src='' />
+          <Card.Content>
+            <Card.Header>
+              {pe.name}
+            </Card.Header>
+            <Card.Description>
+              Click here to make a pick for this pool entry!
+            </Card.Description>
+          </Card.Content>
+          <Card.Content extra className="needs-pick">
+            Needs a Pick!
+          </Card.Content>
+        </Card>
+      </Link>
     ));
     const picked = this.state.poolEntries.filter((pe) => typeof(pe.pick.id) != 'undefined').map((pe) => (
       <Card fluid key={pe.id}>
