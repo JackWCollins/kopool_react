@@ -5,24 +5,6 @@ import { NavBar } from "./NavBar";
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 
-const WEB_STATE_QUERY = gql`
-  query WebStateQuery {
-    webState {
-      id
-      broadcast_message
-      week {
-        id
-        week_number
-      }
-      season {
-        id
-        year
-        open_for_registration
-      }
-    }
-  }
-`;
-
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -49,6 +31,24 @@ class Home extends React.Component {
     }
   }
 }
+
+const WEB_STATE_QUERY = gql`
+  query WebStateQuery {
+    webState {
+      id
+      broadcast_message
+      week {
+        id
+        week_number
+      }
+      season {
+        id
+        year
+        open_for_registration
+      }
+    }
+  }
+`;
 
 export default graphql(WEB_STATE_QUERY, {name: 'webStateQuery'}) (Home)
 

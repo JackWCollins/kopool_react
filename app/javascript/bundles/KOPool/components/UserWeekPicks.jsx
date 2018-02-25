@@ -1,9 +1,11 @@
 import React from 'react'
-import { Card, Container, Statistic, Grid, Header, Image, List, Icon } from 'semantic-ui-react'
+import { Card, Loader, Header, Image, List, Icon } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import MatchupOutcome from './MatchupOutcome'
+import { graphql } from 'react-apollo'
+import gql from 'graphql-tag'
 
-export class UserWeekPicks extends React.Component {
+class UserWeekPicks extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -132,7 +134,14 @@ export class UserWeekPicks extends React.Component {
       </Card>
     ));
 
-    if (unpicked.length > 0) {
+    if (this.props.userWeekPicks.loading) {
+      return (
+        <div>
+          <Header as='h1'>My picks this week</Header>
+          <Loader active inline='centered' />
+        </div>
+      )
+    } else if (unpicked.length > 0) {
       return (
         <div>
           <Header as='h1'>My picks this week</Header>
@@ -153,3 +162,23 @@ export class UserWeekPicks extends React.Component {
     }
   }
 }
+
+const USER_WEEK_PICKS_QUERY = gql`
+  query UserWeekPicksQuery {
+    userPoolEntries {
+      id
+      team_name
+      current_week_pick {
+        id
+        locked_in
+        auto_picked
+        nfl_team {
+          id
+          name
+        }
+      }
+    }
+  }
+`;
+
+export default graphql(USER_WEEK_PICKS_QUERY, {name: 'userWeekPicks'})(UserWeekPicks)

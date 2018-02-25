@@ -8,4 +8,6 @@ Types::PoolEntryType = GraphQL::ObjectType.define do
   field :knocked_out, types.Boolean
   field :knocked_out_week, -> { Types::WeekType }
   field :season, -> { Types::SeasonType }
+  field :picks, -> { Types::PickType }
+  field :current_week_pick, -> { Types::PickType }
 end

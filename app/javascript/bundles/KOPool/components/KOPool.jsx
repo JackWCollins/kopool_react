@@ -8,7 +8,7 @@ import { UserProfile } from "./UserProfile";
 import { Sidebar } from "./Sidebar"
 import { WeekSummary } from "./WeekSummary"
 import { WeekTeamSummary } from "./WeekTeamSummary"
-import { UserWeekPicks } from "./UserWeekPicks";
+import UserWeekPicks from "./UserWeekPicks";
 import { NewUserPick } from "./NewUserPick";
 
 import { graphql } from 'react-apollo'

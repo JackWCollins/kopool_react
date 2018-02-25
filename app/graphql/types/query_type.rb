@@ -25,4 +25,16 @@ Types::QueryType = GraphQL::ObjectType.define do
       WebState.first
     }
   end
+
+  field :userPoolEntries, !types[Types::PoolEntryType] do
+    description "Loads up the user's pool entries"
+    argument :week_id, types.Int
+    resolve ->(obj, args, context) {
+      user = context[:current_user]
+      if user.blank?
+        raise GraphQL::ExecutionError.new("Authentication required")
+      end
+      user.pool_entries
+    }
+  end
 end

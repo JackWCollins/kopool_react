@@ -51,4 +51,9 @@ class PoolEntry < ApplicationRecord
     @returned_user = {name: @user.name, phone: @user.phone}
   end
 
+  def current_week_pick
+    current_week = WebState.first.week
+    picks.where(week_id: current_week.id).first
+  end
+
 end
