@@ -71,7 +71,7 @@ GEM
       activesupport (>= 4.2.0)
     graphiql-rails (1.4.8)
       rails
-    graphql (1.7.9)
+    graphql (1.8.0.pre6)
     i18n (0.9.1)
       concurrent-ruby (~> 1.0)
     jbuilder (2.7.0)
@@ -203,7 +203,7 @@ DEPENDENCIES
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
   graphiql-rails
-  graphql
+  graphql (= 1.8.0.pre6)
   jbuilder (~> 2.5)
   jwt
   listen (>= 3.0.5, < 3.2)

@@ -1,25 +1,30 @@
-class Mutations::PickSelection < GraphQL::Function
+class Mutations::CreatePick < GraphQL::Function
   argument :nfl_team_id, !types.Int
   argument :pool_entry_id, !types.Int
   argument :week_id, !types.Int
+  argument :matchup_id, !types.Int
 
   type Types::PickType
 
   def call(obj, args, context)
     # Raise an exception if there is no user present
-    if context[:current_user].blank?
+    user = context[:current_user]
+    if user.blank?
       raise GraphQL::ExecutionError.new("Authentication required")
     end
 
     picked_team = NflTeam.find_by(id: args[:nfl_team_id])
     week = Week.find_by(id: args[:week_id])
-    pool_entry = PoolEntry.find_by(id: args[:pool_entry_id])
+    matchup = Matchup.find_by(id: args[:matchup_id])
+    pool_entry = user.pool_entries.where(id: args[:pool_entry_id])
 
-    pick = current_user.picks.create!(
-      nfl_team: picked_team,
-      week: week,
-      pool_entry: pool_entry
-    )
+    if pool_entry.blank?
+      raise GraphQL::ExecutionError.new("We couldn't find the pool entry for this pick.")
+    end
+
+    pick = pool_entry.picks.where(week: week).first_or_initialize
+    pick.assign_attributes(team: picked_team, matchup: matchup)
+    pick.save!
 
     pick
   rescue ActiveRecord::RecordInvalid => e

@@ -15,7 +15,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'react_on_rails', '10.0.2'
-gem 'graphql'
+gem 'graphql', '1.8.0.pre6'
 gem 'graphiql-rails', group: :development
 gem 'jwt'
 gem 'bcrypt'

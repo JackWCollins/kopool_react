@@ -10,6 +10,6 @@ class AuthToken
 
   def self.verify(token)
     decoded_token = JWT.decode(token, key, true, {algorithm: 'HS256'})
-    User.find_by(id: decoded_token[0][:user_id])
+    User.find_by(id: decoded_token[0]['user_id'])
   end
 end

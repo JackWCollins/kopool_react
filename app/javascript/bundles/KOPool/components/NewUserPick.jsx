@@ -1,7 +1,7 @@
 import React from 'react'
 import { List, Grid, Search, Button, Image, Divider, Container } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
-import { WeekMatchup } from "./WeekMatchup";
+import WeekMatchup from "./WeekMatchup";
 
 export class NewUserPick extends React.Component {
   constructor(props) {

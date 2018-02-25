@@ -6,6 +6,6 @@ Types::PickType = GraphQL::ObjectType.define do
   field :locked_in, types.Boolean
   field :auto_picked, types.Boolean
   field :week, -> { Types::WeekType }
-  field :team, -> { Types::NflTeamType }
+  field :nfl_team, -> { Types::NflTeamType }
   field :matchup, -> { Types::MatchupType }
 end
