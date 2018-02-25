@@ -1,0 +1,17 @@
+2018_1:
+  season: 2018
+  week_number: 1
+  open_for_picks: true
+  start_date: <%= DateTime.new(2018, 9, 6, 12) %>
+  end_date: <%= DateTime.new(2018, 9, 11, 12) %>
+  deadline: <%= DateTime.new(2018, 9, 9, 17) %>
+  active_for_scoring: false
+
+2018_2:
+  season: 2018
+  week_number: 2
+  open_for_picks: true
+  start_date: <%= DateTime.new(2018, 9, 11, 12) %>
+  end_date: <%= DateTime.new(2018, 9, 18, 12) %>
+  deadline: <%= DateTime.new(2018, 9, 16, 17) %>
+  active_for_scoring: false
