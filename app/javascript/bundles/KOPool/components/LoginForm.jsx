@@ -16,7 +16,8 @@ class LoginForm extends React.Component {
   state = {
     email: '',
     password: '',
-    shouldRedirect: false
+    shouldRedirect: false,
+    error: null
   };
 
   onLoginClick = () => {
@@ -24,15 +25,19 @@ class LoginForm extends React.Component {
   };
 
   signInUser = async() => {
-    const result = await this.props.signInUserMutation({
+    this.setState({error: null});
+    await this.props.signInUserMutation({
       variables: {
         email: this.state.email,
         password: this.state.password
       }
+    }).then((result) => {
+      const token = result.data.signInUser.token;
+      authService.saveUserData(token);
+      this.setState({shouldRedirect: true})
+    }).catch((e) => {
+      this.setState({error: e.graphQLErrors[0]['message']})
     });
-    const token = result.data.signInUser.token;
-    authService.saveUserData(token);
-    this.setState({shouldRedirect: true})
   };
 
   render() {
@@ -66,6 +71,7 @@ class LoginForm extends React.Component {
                 {' '}Log-in to your account
               </Header>
               <Form size='large'>
+                <Message negative hidden={this.state.error === null}>{this.state.error}</Message>
                 <Segment stacked>
                   <Form.Input
                     fluid

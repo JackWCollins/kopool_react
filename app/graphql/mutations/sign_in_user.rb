@@ -12,12 +12,17 @@ class Mutations::SignInUser < GraphQL::Function
   end
 
   def call(obj, args, context)
-    input = args[:email]
-    return unless args.present?
+    if args[:email].blank? || args[:password].blank?
+      raise GraphQL::ExecutionError.new("Please enter both an email and password.")
+    end
 
     user = User.find_by(email: args[:email])
-    return unless user
-    return unless user.authenticate(args[:password])
+    if user.blank?
+      raise GraphQL::ExecutionError.new("Sorry, we could not find a user with that email address. If you need to register a new account please click the Register link below.")
+    end
+    unless user.authenticate(args[:password])
+      raise GraphQL::ExecutionError.new("Whoops! Looks like that password is not correct.")
+    end
 
     OpenStruct.new({
       token: AuthToken.token(user),

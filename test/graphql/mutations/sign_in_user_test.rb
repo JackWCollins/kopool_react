@@ -11,10 +11,8 @@ class Mutations::SignInUserTest < ActiveSupport::TestCase
 
   test 'creates a token on successful sign in' do
     result = perform(
-      # email: {
-        email: @user.email,
-        password: 'jack_password'
-      # }
+      email: @user.email,
+      password: 'jack_password'
     )
 
     assert result.present?
@@ -23,14 +21,20 @@ class Mutations::SignInUserTest < ActiveSupport::TestCase
   end
 
   test 'returns nil without credentials' do
-    assert_nil perform
+    assert_raises(GraphQL::ExecutionError) {
+      perform
+    }
   end
 
   test 'returns nil with incorrect email' do
-    assert_nil perform(email: {email: 'wrong'})
+    assert_raises(GraphQL::ExecutionError) {
+      perform({email: 'wrong'})
+    }
   end
 
   test 'returns nil with incorrect password' do
-    assert_nil perform(email: {email: @user.email, password: 'wrong'})
+    assert_raises(GraphQL::ExecutionError) {
+      perform({email: @user.email, password: 'wrong'})
+    }
   end
 end
