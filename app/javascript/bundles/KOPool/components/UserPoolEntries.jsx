@@ -1,12 +1,30 @@
 import React from 'react'
-import { Card, Loader, Header, Image, Button, Icon } from 'semantic-ui-react'
+import { Card, Loader, Header, Image, Button, Icon, Container, Confirm } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
-import { graphql } from 'react-apollo'
+import { graphql, compose } from 'react-apollo'
 import gql from 'graphql-tag'
+import USER_POOL_ENTRIES_QUERY from '../queries/kopool-queries'
 
 class UserPoolEntries extends React.Component {
   constructor(props) {
     super(props);
+  }
+
+  state = {
+    error: null
+  }
+
+  deletePoolEntry = async(poolEntryId) => {
+    this.setState({error: null});
+    await this.props.deletePoolEntryMutation({
+      variables: {
+        id: poolEntryId
+      }
+    }).then((response) => {
+      this.setState({shouldRedirect: true})
+    }).catch((e) => {
+      this.setState({error: e.graphQLErrors[0]['message']})
+    });
   }
 
   render() {
@@ -27,9 +45,12 @@ class UserPoolEntries extends React.Component {
               <Card.Content>
                 <Card.Header>
                   {pe.team_name}
-                  <Link to={"/pool_entries/"+pe.id+"/edit"}>
-                    <Icon name='edit'></Icon>
-                  </Link>
+                  <span className='float-right'>
+                    <Link to={"/pool_entries/"+pe.id+"/edit"}>
+                      <Icon name='edit'></Icon>
+                    </Link>
+                    <Icon name='delete' onClick={() => this.deletePoolEntry(pe.id)}></Icon>
+                  </span>
                 </Card.Header>
                 <Card.Description>
                   Click here to make a pick for this pool entry!
@@ -71,13 +92,23 @@ class UserPoolEntries extends React.Component {
   }
 }
 
-const USER_POOL_ENTRIES_QUERY = gql`
-  query UserPoolEntriesQuery {
-    userPoolEntries {
+
+
+const DELETE_POOL_ENTRY_MUTATION = gql`
+  mutation DeletePoolEntryMutation($id: ID!){
+    deletePoolEntry(id: $id) {
       id
-      team_name
     }
   }
-`;
+`
 
-export default graphql(USER_POOL_ENTRIES_QUERY, {name: 'poolEntries'})(UserPoolEntries)
+export default compose(
+  graphql(USER_POOL_ENTRIES_QUERY, {name: 'poolEntries'}),
+  graphql(DELETE_POOL_ENTRY_MUTATION,
+    {
+      name: 'deletePoolEntryMutation',
+      options: {
+        refetchQueries: [{query: USER_POOL_ENTRIES_QUERY}]
+      }
+    }),
+)(UserPoolEntries)

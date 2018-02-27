@@ -5,6 +5,8 @@ import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui
 import { Link } from 'react-router-dom';
 import { authService } from './AuthService'
 import PoolEntryForm from './PoolEntryForm'
+import USER_POOL_ENTRIES_QUERY from '../queries/kopool-queries'
+
 
 import { graphql} from 'react-apollo'
 import gql from 'graphql-tag'
@@ -20,16 +22,6 @@ class NewPoolEntry extends React.Component {
     error: null,
     pool_entry_id: null
   };
-
-  // componentDidMount() {
-  //   if (this.props.match.params) {
-  //     this.setState({pool_entry_id: this.props.match.params.pool_entry_id})
-  //   }
-  // }
-
-  // onSubmit = () => {
-  //   this.createPoolEntry()
-  // };
 
   createPoolEntry = async(teamName) => {
     this.setState({error: null});
@@ -70,4 +62,10 @@ const CREATE_POOL_ENTRY_MUTATION = gql`
   }
 `
 
-export default graphql(CREATE_POOL_ENTRY_MUTATION, {name: 'createPoolEntryMutation'})(NewPoolEntry)
+export default graphql(
+  CREATE_POOL_ENTRY_MUTATION, {
+    name: 'createPoolEntryMutation',
+    options: {
+      refetchQueries: [{query: USER_POOL_ENTRIES_QUERY}]
+    }
+  })(NewPoolEntry)
