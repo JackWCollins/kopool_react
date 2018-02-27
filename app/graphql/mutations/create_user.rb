@@ -31,11 +31,11 @@ class Mutations::CreateUser < GraphQL::Function
     if user.errors.present?
       message = user.errors.full_messages.first
       raise GraphQL::ExecutionError.new(message)
+    else
+      OpenStruct.new({
+         token: AuthToken.token(user),
+         user: user
+       })
     end
-
-    OpenStruct.new({
-       token: AuthToken.token(user),
-       user: user
-    })
   end
 end

@@ -13,6 +13,8 @@ import { NewUserPick } from "./NewUserPick";
 
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
+import EditPoolEntry from "./EditPoolEntry";
+import NewPoolEntry from "./NewPoolEntry";
 
 const NFL_TEAMS_QUERY = gql`
   query NflTeamsQuery {
@@ -59,7 +61,9 @@ class KOPool extends React.Component {
                   <Route path="/week_picks" exact component={UserWeekPicks} />
                   <Route path="/week_summary" exact component={WeekSummary} />
                   <Route path="/week_summary/:team_id" component={WeekTeamSummary} />
-                  <Route path="/new_pick" component={NewUserPick} />
+                  <Route path="/picks/new" component={NewUserPick} />
+                  <Route path="/pool_entries/new" component={NewPoolEntry} />
+                  <Route path="/pool_entries/:pool_entry_id/edit" component={EditPoolEntry} />
                 </Container>
               </Grid.Column>
             </Grid.Row>

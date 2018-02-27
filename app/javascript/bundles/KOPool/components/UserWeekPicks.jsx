@@ -89,7 +89,7 @@ class UserWeekPicks extends React.Component {
 
   render() {
     const unpicked = this.state.poolEntries.filter((pe) => typeof(pe.pick.id) === 'undefined').map((pe) => (
-      <Link key={pe.id} to='/new_pick'>
+      <Link key={pe.id} to='/picks/new'>
         <Card fluid >
           <Image src='' />
           <Card.Content>

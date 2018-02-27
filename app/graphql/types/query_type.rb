@@ -37,4 +37,12 @@ Types::QueryType = GraphQL::ObjectType.define do
       user.pool_entries
     }
   end
+
+  field :poolEntry, !Types::PoolEntryType do
+    description "Return a single pool entry"
+    argument :id, !types.ID
+    resolve ->(obj, args, context) {
+      PoolEntry.find_by_id(args[:id])
+    }
+  end
 end

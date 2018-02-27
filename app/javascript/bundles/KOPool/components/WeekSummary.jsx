@@ -75,20 +75,20 @@ export class WeekSummary extends React.Component {
     return (
       <Container className='week-results'>
         <Header>Week 1 Results</Header>
-          <Statistic.Group widths="three">
-            <Statistic color='green'>
-              <Statistic.Value>35</Statistic.Value>
-              <Statistic.Label>Advanced</Statistic.Label>
-            </Statistic>
-            <Statistic color='red'>
-              <Statistic.Value>25</Statistic.Value>
-              <Statistic.Label>KO'd</Statistic.Label>
-            </Statistic>
-            <Statistic color='blue'>
-              <Statistic.Value>12</Statistic.Value>
-              <Statistic.Label>In play</Statistic.Label>
-            </Statistic>
-          </Statistic.Group>
+        <Statistic.Group widths="three">
+          <Statistic color='green'>
+            <Statistic.Value>35</Statistic.Value>
+            <Statistic.Label>Advanced</Statistic.Label>
+          </Statistic>
+          <Statistic color='red'>
+            <Statistic.Value>25</Statistic.Value>
+            <Statistic.Label>KO'd</Statistic.Label>
+          </Statistic>
+          <Statistic color='blue'>
+            <Statistic.Value>12</Statistic.Value>
+            <Statistic.Label>In play</Statistic.Label>
+          </Statistic>
+        </Statistic.Group>
         <List selection verticalAlign='middle' size='big'>
           {nflTeamCards}
         </List>

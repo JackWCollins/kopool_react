@@ -1,24 +1,9 @@
-# README
+# Welcome to the KO Pool!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+I originally started this project years ago for a family friend. He hosts a "knockout pool" each year during the NFL Season.
 
-Things you may want to cover:
+The game is simple: each week of the NFL season you must pick one team that will win. If that team wins then you advance to the next week. If that team loses or ties then you're knocked out!
 
-* Ruby version
+Although the game is simple, there are some fun pieces of the code. The "commish" or manager of the pool has admin rights to score each matchup and control when picks are locked. Participants can only see the picks for each week starting at 11 AM on Sunday morning. It makes for some exciting games to watch on Sunday!
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This project is still definitely a work in progress. The original version was written in Rails 4 and Angular JS 1.5. I haven't updated that code in years, so if you venture in there shield your eyes! 

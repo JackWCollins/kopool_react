@@ -1,8 +1,9 @@
 import React from 'react'
-import { Header, Loader, Container } from 'semantic-ui-react'
+import { Header, Loader, Container, Message, Statistic } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import { NavBar } from "./NavBar";
-import { graphql } from 'react-apollo'
+import UserPoolEntries from "./UserPoolEntries"
+import { graphql, compose } from 'react-apollo'
 import gql from 'graphql-tag'
 
 class Home extends React.Component {
@@ -23,9 +24,25 @@ class Home extends React.Component {
       return (
         <div>
           <Header as='h1'>Welcome to KO Pool 2018!</Header>
-          <Container>
-            {this.props.webStateQuery.webState.broadcast_message}
+          <Container className='broadcast-message-container'>
+            <Message info>
+              <Message.Header>From the office of the commish:</Message.Header>
+              <p>{this.props.webStateQuery.webState.broadcast_message}</p>
+            </Message>
           </Container>
+          <Container className='season-summary'>
+            <Statistic.Group widths="two">
+              <Statistic color='green'>
+                <Statistic.Value>$20,500</Statistic.Value>
+                <Statistic.Label>Payout</Statistic.Label>
+              </Statistic>
+              <Statistic color='red'>
+                <Statistic.Value>257</Statistic.Value>
+                <Statistic.Label>Remaining</Statistic.Label>
+              </Statistic>
+            </Statistic.Group>
+          </Container>
+          <UserPoolEntries openForRegistration={this.props.webStateQuery.webState.season.open_for_registration}/>
         </div>
       )
     }
