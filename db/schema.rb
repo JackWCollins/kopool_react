@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180211235923) do
+ActiveRecord::Schema.define(version: 20180304171110) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 20180211235923) do
     t.datetime "updated_at"
     t.boolean "auto_picked"
     t.integer "matchup_id"
+    t.integer "status", default: 0, null: false
   end
 
   create_table "pool_entries", id: :serial, force: :cascade do |t|

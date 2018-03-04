@@ -1,0 +1,23 @@
+vikings:
+  name: Minnesota Vikings
+  conference: NFC
+  division: North
+  home_field: US Bank Stadium
+
+bears:
+  name: Chicago Bears
+  conference: NFC
+  division: North
+  home_field: Soldier Field
+
+oakland:
+  name: Oakland Raiders
+  conference: AFC
+  division: West
+  home_field: Oakland Field
+
+broncos:
+  name: Denver Broncos
+  conference: AFC
+  division: West
+  home_field: Mile Hi Stadium

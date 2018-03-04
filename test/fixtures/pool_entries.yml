@@ -1,0 +1,27 @@
+jack_1:
+  team_name: Jack First Pool Entry
+  paid: true
+  knocked_out: false
+  season: 2018
+  user: jack
+
+jack_2:
+  team_name: Jack Second Pool Entry
+  paid: true
+  knocked_out: false
+  season: 2018
+  user: jack
+
+dave_1:
+  team_name: Dave First Pool Entry
+  paid: true
+  knocked_out: false
+  season: 2018
+  user: dave
+
+dave_2:
+  team_name: Dave Second Pool Entry
+  paid: true
+  knocked_out: false
+  season: 2018
+  user: dave

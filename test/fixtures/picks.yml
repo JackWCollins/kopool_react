@@ -1,0 +1,27 @@
+jack_week_1_vikings:
+  pool_entry: jack_1
+  week: 2018_1
+  nfl_team: vikings
+  matchup: vikings_bears
+  locked_in: true
+
+jack_week_1_broncos:
+  pool_entry: jack_2
+  week: 2018_1
+  nfl_team: broncos
+  matchup: broncos_raiders
+  locked_in: true
+
+dave_week_1_bears:
+  pool_entry: dave_1
+  week: 2018_1
+  nfl_team: bears
+  matchup: vikings_bears
+  locked_in: true
+
+dave_week_1_broncos:
+  pool_entry: dave_2
+  week: 2018_1
+  nfl_team: broncos
+  matchup: broncos_raiders
+  locked_in: true
