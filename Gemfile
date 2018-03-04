@@ -19,6 +19,7 @@ gem 'graphql', '1.8.0.pre6'
 gem 'graphiql-rails', group: :development
 gem 'jwt'
 gem 'bcrypt'
+gem 'figaro'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

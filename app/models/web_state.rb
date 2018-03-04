@@ -3,7 +3,7 @@ class WebState < ApplicationRecord
   belongs_to :week
   belongs_to :season
 
-  validate :only_one_record?, :on => :create
+  validate :only_one_record, :on => :create
   validate :season_matches_week, :on => :update
 
   delegate :open_for_picks, to: :current_week
@@ -23,7 +23,7 @@ class WebState < ApplicationRecord
 
   private
 
-  def only_one_record?
+  def only_one_record
     self.errors[:base] << "There can only be one WebState record" if WebState.count > 0
   end
 

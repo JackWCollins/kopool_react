@@ -13,8 +13,7 @@ class PoolEntry < ApplicationRecord
   end
 
   def user_information
-    @user = self.user
-    @returned_user = {name: @user.name, phone: @user.phone}
+    {name: user.name, phone: user.phone}
   end
 
   def current_week_pick

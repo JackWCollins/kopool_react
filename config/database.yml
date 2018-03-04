@@ -1,21 +1,15 @@
-development:
+default: &default
   adapter: postgresql
   encoding: unicode
-  database: kopool_development
   pool: 5
-  username: kopool
-  password: sixstair
+  username: <%= ENV['postgres_username'] %>
+  password: <%= ENV['postgres_password'] %>
+
+development:
+  database: kopool_development
 
 test:
-  adapter: postgresql
-  encoding: unicode
   database: kopool_test
-  pool: 5
-  username: kopool
-  password: sixstair
 
 production:
   adapter: postgresql
-  encoding: unicode
-  database: kopool_production
-  pool: 5
