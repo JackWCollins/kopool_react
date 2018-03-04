@@ -6,6 +6,7 @@
   end_date: <%= DateTime.new(2018, 9, 11, 12) %>
   deadline: <%= DateTime.new(2018, 9, 9, 17) %>
   active_for_scoring: false
+  default_team: vikings
 
 2018_2:
   season: 2018
@@ -15,3 +16,4 @@
   end_date: <%= DateTime.new(2018, 9, 18, 12) %>
   deadline: <%= DateTime.new(2018, 9, 16, 17) %>
   active_for_scoring: false
+  default_team: vikings

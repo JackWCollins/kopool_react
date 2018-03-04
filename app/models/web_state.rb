@@ -8,6 +8,19 @@ class WebState < ApplicationRecord
 
   delegate :open_for_picks, to: :current_week
 
+  def move_to_next_week!
+    this_week = week
+    if this_week.week_number == Season::WEEKS_IN_SEASON
+      return # We have reached the end of the season
+    end
+
+    this_week.close_week_for_picks!
+    next_week_number = this_week.week_number + 1
+    next_week = Week.where(season: season).where(week_number: next_week_number).first
+    self.update_attributes!(week_id: next_week.id)
+    next_week.reopen_week_for_picks!
+  end
+
   private
 
   def only_one_record?

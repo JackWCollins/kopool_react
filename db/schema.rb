@@ -134,5 +134,4 @@ ActiveRecord::Schema.define(version: 20180304171110) do
     t.datetime "updated_at"
     t.boolean "active_for_scoring", default: true
   end
-
 end
