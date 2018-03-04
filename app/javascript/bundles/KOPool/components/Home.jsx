@@ -5,6 +5,7 @@ import { NavBar } from "./NavBar";
 import UserPoolEntries from "./UserPoolEntries"
 import { graphql, compose } from 'react-apollo'
 import gql from 'graphql-tag'
+import { WEB_STATE_QUERY } from "../queries/kopool-queries";
 
 class Home extends React.Component {
   constructor(props) {
@@ -48,24 +49,6 @@ class Home extends React.Component {
     }
   }
 }
-
-const WEB_STATE_QUERY = gql`
-  query WebStateQuery {
-    webState {
-      id
-      broadcast_message
-      week {
-        id
-        week_number
-      }
-      season {
-        id
-        year
-        open_for_registration
-      }
-    }
-  }
-`;
 
 export default graphql(WEB_STATE_QUERY, {name: 'webStateQuery'}) (Home)
 

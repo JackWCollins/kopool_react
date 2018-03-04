@@ -3,7 +3,7 @@ import { Card, Loader, Header, Image, Button, Icon, Container, Confirm } from 's
 import { Link } from 'react-router-dom'
 import { graphql, compose } from 'react-apollo'
 import gql from 'graphql-tag'
-import USER_POOL_ENTRIES_QUERY from '../queries/kopool-queries'
+import { USER_POOL_ENTRIES_QUERY, DELETE_POOL_ENTRY_MUTATION } from '../queries/kopool-queries'
 
 class UserPoolEntries extends React.Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class UserPoolEntries extends React.Component {
 
   state = {
     error: null
-  }
+  };
 
   deletePoolEntry = async(poolEntryId) => {
     this.setState({error: null});
@@ -25,7 +25,7 @@ class UserPoolEntries extends React.Component {
     }).catch((e) => {
       this.setState({error: e.graphQLErrors[0]['message']})
     });
-  }
+  };
 
   render() {
     if (this.props.poolEntries.loading) {
@@ -91,16 +91,6 @@ class UserPoolEntries extends React.Component {
     }
   }
 }
-
-
-
-const DELETE_POOL_ENTRY_MUTATION = gql`
-  mutation DeletePoolEntryMutation($id: ID!){
-    deletePoolEntry(id: $id) {
-      id
-    }
-  }
-`
 
 export default compose(
   graphql(USER_POOL_ENTRIES_QUERY, {name: 'poolEntries'}),

@@ -34,14 +34,6 @@ class KOPool extends React.Component {
 
   };
 
-  // constructor(props) {
-  //   super(props);
-  //
-  //   this.state = {
-  //     season: this.props.season
-  //   };
-  // };
-
   render() {
     // const nflTeams = this.props.nflTeamsQuery.nfl_teams;
 

@@ -3,6 +3,7 @@ import { List, Grid, Transition, Button, Header, Icon, Container } from 'semanti
 import { Redirect } from 'react-router-dom'
 import { graphql } from "react-apollo/index";
 import gql from 'graphql-tag'
+import { CREATE_PICK_MUTATION } from "../queries/kopool-queries";
 
 class WeekMatchup extends React.Component {
   constructor(props) {
@@ -53,20 +54,6 @@ class WeekMatchup extends React.Component {
   }
 }
 
-const CREATE_PICK_MUTATION = gql`
-  mutation CreatePickMutation($nfl_team_id: Int!, $week_id: Int!, $pool_entry_id: Int!, $matchup_id: Int!){
-    createPick(nfl_team_id: $nfl_team_id, week_id: $week_id, pool_entry_id: $pool_entry_id, matchup_id: $matchup_id) {
-      id
-      nfl_team {
-        id
-        name
-      }
-      matchup {
-        id
-        game_time
-      }
-    }
-  }
-`
+
 
 export default graphql(CREATE_PICK_MUTATION, {name: 'createPickMutation'})(WeekMatchup)

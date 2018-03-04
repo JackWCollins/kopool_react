@@ -5,9 +5,9 @@ import { Loader } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import { authService } from './AuthService'
 import PoolEntryForm from './PoolEntryForm'
+import { UPDATE_POOL_ENTRY_MUTATION, POOL_ENTRY_QUERY } from "../queries/kopool-queries";
 
 import { graphql, compose } from 'react-apollo'
-import gql from 'graphql-tag'
 
 class EditPoolEntry extends React.Component {
   constructor(props) {
@@ -51,24 +51,6 @@ class EditPoolEntry extends React.Component {
     }
   }
 }
-
-const UPDATE_POOL_ENTRY_MUTATION = gql`
-  mutation UpdatePoolEntryMutation($team_name: String!, $id: ID!){
-    updatePoolEntry(id: $id, team_name: $team_name) {
-      id
-      team_name
-    }
-  }
-`
-
-const POOL_ENTRY_QUERY= gql`
-  query PoolEntryQuery($id: ID!){
-    poolEntry(id: $id) {
-      id
-      team_name
-    }
-  }
-`
 
 export default compose(
   graphql(UPDATE_POOL_ENTRY_MUTATION, {name: 'updatePoolEntryMutation'}),

@@ -5,7 +5,7 @@ import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui
 import { Link } from 'react-router-dom';
 import { authService } from './AuthService'
 import PoolEntryForm from './PoolEntryForm'
-import USER_POOL_ENTRIES_QUERY from '../queries/kopool-queries'
+import { USER_POOL_ENTRIES_QUERY } from '../queries/kopool-queries'
 
 
 import { graphql} from 'react-apollo'
