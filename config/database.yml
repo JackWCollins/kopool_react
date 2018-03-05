@@ -2,14 +2,17 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: 5
-  username: <%= ENV['postgres_username'] %>
-  password: <%= ENV['postgres_password'] %>
+  username: <%= ENV['POSTGRES_USERNAME'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
 
 development:
+  <<: *default
   database: kopool_development
 
 test:
+  <<: *default
   database: kopool_test
 
 production:
-  adapter: postgresql
+  <<: *default
+  database: kopool_production

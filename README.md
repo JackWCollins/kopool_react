@@ -15,3 +15,5 @@ This new project is built with:
 * Apollo and GraphQL
 
 This project is still definitely a work in progress. The [original version](https://github.com/JackWCollins/kopool) was written in Rails 4 and Angular JS 1.5. I haven't updated that code in years, so if you venture in there shield your eyes! 
+
+![First Week Sample Image](./public/kopool_sample_desktop.png)

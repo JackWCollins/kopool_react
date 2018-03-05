@@ -28,7 +28,7 @@ class UserPoolEntries extends React.Component {
   };
 
   render() {
-    if (this.props.poolEntries.loading) {
+    if (this.props.poolEntriesQuery.loading) {
       return (
         <div>
           <Header as='h3'>My pool entries:</Header>
@@ -39,7 +39,7 @@ class UserPoolEntries extends React.Component {
       return (
         <div>
           <Header as='h3'>My pool entries:</Header>
-          {this.props.poolEntries.userPoolEntries.map((pe) => (
+          {this.props.poolEntriesQuery.userPoolEntries.map((pe) => (
             <Card fluid key={pe.id}>
               <Image src='' />
               <Card.Content>
@@ -70,7 +70,7 @@ class UserPoolEntries extends React.Component {
       return (
         <div>
           <Header as='h3'>My pool entries:</Header>
-          {this.props.poolEntries.userPoolEntries.map((pe) => (
+          {this.props.poolEntriesQuery.userPoolEntries.map((pe) => (
             <Card fluid >
               <Image src='' />
               <Card.Content>
@@ -93,7 +93,7 @@ class UserPoolEntries extends React.Component {
 }
 
 export default compose(
-  graphql(USER_POOL_ENTRIES_QUERY, {name: 'poolEntries'}),
+  graphql(USER_POOL_ENTRIES_QUERY, {name: 'poolEntriesQuery'}),
   graphql(DELETE_POOL_ENTRY_MUTATION,
     {
       name: 'deletePoolEntryMutation',
