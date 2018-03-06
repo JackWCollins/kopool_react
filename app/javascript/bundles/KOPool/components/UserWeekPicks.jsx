@@ -181,4 +181,12 @@ const USER_WEEK_PICKS_QUERY = gql`
   }
 `;
 
-export default graphql(USER_WEEK_PICKS_QUERY, {name: 'userWeekPicks'})(UserWeekPicks)
+export default graphql(USER_WEEK_PICKS_QUERY, {
+  name: 'userWeekPicks',
+  options: (ownProps) => ({
+    variables: {
+      id: typeof ownProps.currentWeekId === 'undefined' ? ownProps.match.params.week_id : ownProps.currentWeekId
+    }
+  })
+})
+(UserWeekPicks)

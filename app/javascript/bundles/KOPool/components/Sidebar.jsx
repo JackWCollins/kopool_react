@@ -41,7 +41,7 @@ export class Sidebar extends React.Component {
           <Header as="h5">This week</Header>
           <List.Item>
             <List.Content>
-              <List.Header><Link to="/week_picks">My Picks</Link></List.Header>
+              <List.Header><Link to="/my_picks">My Picks</Link></List.Header>
             </List.Content>
           </List.Item>
           <List.Item>

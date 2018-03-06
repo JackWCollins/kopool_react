@@ -71,7 +71,7 @@ class UserPoolEntries extends React.Component {
         <div>
           <Header as='h3'>My pool entries:</Header>
           {this.props.poolEntriesQuery.userPoolEntries.map((pe) => (
-            <Card fluid >
+            <Card fluid key={pe.id}>
               <Image src='' />
               <Card.Content>
                 <Card.Header>
