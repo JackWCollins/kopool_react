@@ -1,4 +1,4 @@
-2018_1:
+one:
   season: 2018
   week_number: 1
   open_for_picks: true
@@ -8,7 +8,7 @@
   active_for_scoring: false
   default_team: vikings
 
-2018_2:
+two:
   season: 2018
   week_number: 2
   open_for_picks: true

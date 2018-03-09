@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import MatchupOutcome from './MatchupOutcome'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
+import { USER_WEEK_PICKS_QUERY } from "../queries/kopool-queries";
 
 class UserWeekPicks extends React.Component {
   constructor(props) {
@@ -88,7 +89,7 @@ class UserWeekPicks extends React.Component {
   }
 
   render() {
-    const unpicked = this.state.poolEntries.filter((pe) => typeof(pe.pick.id) === 'undefined').map((pe) => (
+    const unpicked = this.props.userWeekPicks.userPoolEntries.filter((pe) => typeof(pe.pick.id) === 'undefined').map((pe) => (
       <Link key={pe.id} to='/picks/new'>
         <Card fluid >
           <Image src='' />
@@ -106,7 +107,7 @@ class UserWeekPicks extends React.Component {
         </Card>
       </Link>
     ));
-    const picked = this.state.poolEntries.filter((pe) => typeof(pe.pick.id) != 'undefined').map((pe) => (
+    const picked = this.props.userWeekPicks.userPoolEntries.filter((pe) => typeof(pe.pick.id) != 'undefined').map((pe) => (
       <Card fluid key={pe.id}>
         <Image src='' />
         <Card.Content>
@@ -162,24 +163,6 @@ class UserWeekPicks extends React.Component {
     }
   }
 }
-
-const USER_WEEK_PICKS_QUERY = gql`
-  query UserWeekPicksQuery {
-    userPoolEntries {
-      id
-      team_name
-      current_week_pick {
-        id
-        locked_in
-        auto_picked
-        nfl_team {
-          id
-          name
-        }
-      }
-    }
-  }
-`;
 
 export default graphql(USER_WEEK_PICKS_QUERY, {
   name: 'userWeekPicks',

@@ -1,11 +1,23 @@
 vikings_bears:
-  week: 2018_1
+  week: one
   game_time: <%= DateTime.new(2018, 9, 9, 17) %>
   home_team: vikings
   away_team: bears
 
 broncos_raiders:
-  week: 2018_1
+  week: one
   game_time: <%= DateTime.new(2018, 9, 9, 17) %>
   home_team: broncos
+  away_team: raiders
+
+vikings_broncos:
+  week: two
+  game_time: <%= DateTime.new(2018, 9, 9, 17) %>
+  home_team: vikings
+  away_team: broncos
+
+bears_raiders:
+  week: two
+  game_time: <%= DateTime.new(2018, 9, 9, 17) %>
+  home_team: bears
   away_team: raiders

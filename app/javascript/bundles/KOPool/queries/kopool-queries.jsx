@@ -74,3 +74,21 @@ export const CREATE_PICK_MUTATION = gql`
     }
   }
 `
+
+export const USER_WEEK_PICKS_QUERY = gql`
+  query UserWeekPicksQuery($week_id: ID!) {
+    userPoolEntries(week_id: $week_id) {
+      id
+      team_name
+      week_pick {
+        id
+        locked_in
+        auto_picked
+        nfl_team {
+          id
+          name
+        }
+      }
+    }
+  }
+`;
