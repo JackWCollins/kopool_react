@@ -77,16 +77,25 @@ export const CREATE_PICK_MUTATION = gql`
 
 export const USER_WEEK_PICKS_QUERY = gql`
   query UserWeekPicksQuery($week_id: ID!) {
-    userPoolEntries(week_id: $week_id) {
+    userPoolEntries {
       id
       team_name
-      week_pick {
+      week_pick(week_id: $week_id) {
         id
         locked_in
         auto_picked
+        status
         nfl_team {
           id
           name
+        }
+        matchup {
+          id
+          game_time
+          stadium
+          winning_team {
+            id
+          }
         }
       }
     }

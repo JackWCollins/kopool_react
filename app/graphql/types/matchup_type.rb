@@ -7,6 +7,7 @@ Types::MatchupType = GraphQL::ObjectType.define do
   field :locked, !types.Boolean
   field :completed, !types.Boolean
   field :tie, !types.Boolean
+  field :stadium, !types.String
   field :week, -> { Types::WeekType }
   field :home_team, -> { Types::NflTeamType }
   field :away_team, -> { Types::NflTeamType }
