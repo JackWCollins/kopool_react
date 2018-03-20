@@ -25,7 +25,7 @@ const middlewareAuthLink = new ApolloLink((operation, forward) => {
     headers: {
       authorization: authorizationHeader
     }
-  })
+  });
   return forward(operation)
 });
 

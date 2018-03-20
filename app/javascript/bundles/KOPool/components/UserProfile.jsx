@@ -7,7 +7,8 @@ export class UserProfile extends React.Component {
   render() {
     return (
       <Container>
-        Profile!!
+        <h2>My Profile</h2>
+        <p>There will be a profile here soon, I promise!</p>
       </Container>
     )
   }

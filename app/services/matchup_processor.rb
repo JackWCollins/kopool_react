@@ -18,6 +18,7 @@ class MatchupProcessor
       else
         update_losing_pick(pick)
       end
+      # TODO: Send an email to the user based on the status of their pick
     end
     @matchup
   end

@@ -24,6 +24,7 @@ class WebState < ApplicationRecord
   private
 
   def only_one_record
+    # We use a single `WebState` record to manage the global state of the app
     self.errors[:base] << "There can only be one WebState record" if WebState.count > 0
   end
 
