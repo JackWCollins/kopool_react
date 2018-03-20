@@ -16,8 +16,6 @@ This new project is built with:
 * `jwt` gem for Javascript Web Token authorization
 * Apollo and GraphQL
 
-This `kopool_react` project is definitely still a work in progress. The [original version](https://github.com/JackWCollins/kopool) was written in Rails 4 and Angular JS 1.5. I haven't updated that code in years, so if you venture in there shield your eyes! 
-
 ![First Week Sample Image](./public/kopool_sample_desktop.png)
 
 ### Code Breakdown
@@ -50,3 +48,5 @@ The [`WeekSummary`](https://github.com/JackWCollins/kopool_react/blob/master/app
 
 
 ### Original Project
+
+This `kopool_react` project is definitely still a work in progress. The [original version](https://github.com/JackWCollins/kopool) was written in Rails 4 and Angular JS 1.5. I haven't updated that code in years, so if you venture in there shield your eyes! 
