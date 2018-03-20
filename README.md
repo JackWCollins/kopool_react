@@ -45,7 +45,7 @@ The [`UserWeekPicks`](https://github.com/JackWCollins/kopool_react/blob/master/a
 
 The [`WeekSummary`](https://github.com/JackWCollins/kopool_react/blob/master/app/javascript/bundles/KOPool/components/WeekSummary.jsx) becomes visible once the week has been locked for picks. We display a public summary of **all** of the picks for the week. This is the most fun screen because it gives you a high level overview on which games to keep your eye on. Let's say you and five other people picked the Vikings to win, but 25 people picked the Packers instead. You'd sure want the Vikings to pull out the upset!
 
-
+The GraphQL queries can be seen at [`app/javascript/bundles/KOPool/queries`](https://github.com/JackWCollins/kopool_react/tree/master/app/javascript/bundles/KOPool/queries). I use the Apollo `graphql` function to connec the components with the automatic GraphQL queries.
 
 ### Original Project
 
