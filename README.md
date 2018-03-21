@@ -10,7 +10,7 @@ Although the game is simple, there are some fun pieces of the code. The "commish
 
 This new project is built with:
 
-* Rails 5.2
+* Rails 5.1
 * `react_on_rails` gem using webpacker
 * React.js with React Router V4
 * `jwt` gem for Javascript Web Token authorization
