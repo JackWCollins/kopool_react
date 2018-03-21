@@ -47,6 +47,15 @@ The [`WeekSummary`](https://github.com/JackWCollins/kopool_react/blob/master/app
 
 The GraphQL queries can be seen at [`app/javascript/bundles/KOPool/queries`](https://github.com/JackWCollins/kopool_react/tree/master/app/javascript/bundles/KOPool/queries). I use the Apollo `graphql` function to connec the components with the automatic GraphQL queries.
 
+### Testing
+
+I am using the following tools for test-driven development in this project:
+
+* Minitest
+* Capybara
+* Jest
+* Enzyme
+
 ### Original Project
 
 This `kopool_react` project is definitely still a work in progress. The [original version](https://github.com/JackWCollins/kopool) was written in Rails 4 and Angular JS 1.5. I haven't updated that code in years, so if you venture in there shield your eyes! 
